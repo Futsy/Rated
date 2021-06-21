@@ -1,7 +1,7 @@
 ## Interface: 90005
 ## Author - Futs 
 ## Title: Rated
-## Version: v1.0
+## Version: v1.1
 ## Notes: Inspired by REflex, tracks arena games to the point where it gets questionable (Special thanks to Valk and Mook for helping me out with games to test this).
 ## SavedVariablesPerCharacter: data, RatedIcon
 #@no-lib-strip@

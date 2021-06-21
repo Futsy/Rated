@@ -5,7 +5,7 @@ function DisplayAddonFrame()
             OpenHome();
             AddGamesToScrollArea();
         else
-            print("Did not yet receive a ranking update.. please wait a second.");
+            print(textInserts.errorRatedUpdate);
         end
     elseif callbacks.mainWindow:IsVisible() == false then
         OpenHome();

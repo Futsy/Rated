@@ -1,3 +1,7 @@
+local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
+local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
+local goldEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 125);
+
 function CreateHomeHeaderWindow()
     --
     -- Display the season name
@@ -61,33 +65,29 @@ function CreateHomeHeaderWindow()
     callbacks.threesCurrentText = Text(threesHeaderWindow, texts.threesHighestDetail);
     callbacks.threesCurrentText:SetText(data.threeVThreeRating);
 
-    local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
-    local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
-    local goldEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 125);
-
     threesHeaderWindow:SetScript("OnEnter", function(self, motion)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine("3v3 stats");
-        GameTooltip:AddLine(whiteEscapeColor.."Summary of all the games played in 3v3.\n\n".."|r", 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor.."Current".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.threeVThreeRating).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Rating: ", blueEscapeColor..data.threeVThreeRating.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(textInserts.threesHeader);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.threesSummary, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeRating).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.threeVThreeRating.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor.."Season".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.threeVThreeSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Highest: ", blueEscapeColor..data.threeVThreeSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Played: ", blueEscapeColor..data.threeVThreeSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Won: ", blueEscapeColor..data.threeVThreeSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Lost: ", blueEscapeColor..(data.threeVThreeSeasonPlayed - data.threeVThreeSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.threeVThreeSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.threeVThreeSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.threeVThreeSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.threeVThreeSeasonPlayed - data.threeVThreeSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor.."This week".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.threeVThreeWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Highest: ", blueEscapeColor..data.threeVThreeWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Played: ", blueEscapeColor..data.threeVThreeWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Won: ", blueEscapeColor..data.threeVThreeWeeklyWon.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Lost: ", blueEscapeColor..(data.threeVThreeWeeklyPlayed - data.threeVThreeWeeklyWon).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.threeVThreeWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.threeVThreeWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.threeVThreeWeeklyWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.threeVThreeWeeklyPlayed - data.threeVThreeWeeklyWon).."|r", 1, 1, 1, 1 ,1, 1);
 
         GameTooltip:Show();
     end);
@@ -97,26 +97,18 @@ function CreateHomeHeaderWindow()
 end
 
 function CreateTooltipForSeasonHeader(frame)
-    local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
-    local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
-
     frame:SetScript("OnEnter", function(self, motion)
-        local expansionLevel = GetMaximumExpansionLevel();
         local currentSeasonNumber = GetCurrentArenaSeason();
-        local expansionName = "Unknown";
-        
-        if expansionLevel == 8 then
-            expansionName = "Shadowlands";
-        end
+        local expansionName = GetCurrentXpacTitle();
 
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine("Season information");
-        GameTooltip:AddLine(whiteEscapeColor.."Welcome to the season, don't forget to have fun!\n\n".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Name: ", blueEscapeColor..GetCurrentSeasonTitle().."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Number: ", blueEscapeColor..currentSeasonNumber.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Expansion: ", blueEscapeColor..expansionName.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(textInserts.seasonInfo);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.seasonFunReminder, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipNameLabel, blueEscapeColor..GetCurrentSeasonTitle().."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipNumberLabel, blueEscapeColor..currentSeasonNumber.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipExpansionLabel, blueEscapeColor..expansionName.."|r", 1, 1, 1, 1 ,1, 1);
 
         GameTooltip:Show();
     end);
@@ -126,25 +118,21 @@ function CreateTooltipForSeasonHeader(frame)
 end
 
 function CreateTooltipForSeasonHigh(frame)
-    local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
-    local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
-    local goldEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 125);
-
     frame:SetScript("OnEnter", function(self, motion)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine("Season high");
-        GameTooltip:AddLine(whiteEscapeColor.."Season high is gathered from the highest rating \nattained during the season in 2v2 or 3v3.\n\n".."|r", 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor.."2v2".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Highest title: ", blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Season high: ", blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Weekly high: ", blueEscapeColor..data.twoVTwoWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(textInserts.seasonHeader);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.seasonSummary, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor.."2v2|r", 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipHighestTitle, blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipSeasonHighest, blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipWeeklyHighest, blueEscapeColor..data.twoVTwoWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor.."3v3".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Highest title: ", blueEscapeColor..ResolveTitle(data.threeVThreeSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Season high: ", blueEscapeColor..data.threeVThreeSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Weekly high: ", blueEscapeColor..data.threeVThreeWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(goldEscapeColor.."3v3|r", 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipHighestTitle, blueEscapeColor..ResolveTitle(data.threeVThreeSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipSeasonHighest, blueEscapeColor..data.threeVThreeSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.tooltipWeeklyHighest, blueEscapeColor..data.threeVThreeWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
 
         GameTooltip:Show();
     end);
@@ -154,33 +142,29 @@ function CreateTooltipForSeasonHigh(frame)
 end
 
 function CreateTooltipForTwosCurrent(frame)
-    local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
-    local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
-    local goldEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 125);
-
     frame:SetScript("OnEnter", function(self, motion)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine("2v2 stats");
-        GameTooltip:AddLine(whiteEscapeColor.."Summary of all the games played in 2v2.\n\n".."|r", 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor.."Current".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.twoVTwoRating).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Rating: ", blueEscapeColor..data.twoVTwoRating.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(textInserts.twosHeader);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.twosSummary, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoRating).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.twoVTwoRating.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor.."Season".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Highest: ", blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Played: ", blueEscapeColor..data.twoVTwoSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Won: ", blueEscapeColor..data.twoVTwoSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Lost: ", blueEscapeColor..(data.twoVTwoSeasonPlayed - data.twoVTwoSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.twoVTwoSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.twoVTwoSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.twoVTwoSeasonPlayed - data.twoVTwoSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor.."This week".."|r", 1, 1, 1);
-        GameTooltip:AddDoubleLine("Title: ", blueEscapeColor..ResolveTitle(data.twoVTwoWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Highest: ", blueEscapeColor..data.twoVTwoWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Played: ", blueEscapeColor..data.twoVTwoWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Won: ", blueEscapeColor..data.twoVTwoWeeklyWon.."|r", 1, 1, 1, 1 ,1, 1);
-        GameTooltip:AddDoubleLine("Lost: ", blueEscapeColor..(data.twoVTwoWeeklyPlayed - data.twoVTwoWeeklyWon).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.twoVTwoWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.twoVTwoWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.twoVTwoWeeklyWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.twoVTwoWeeklyPlayed - data.twoVTwoWeeklyWon).."|r", 1, 1, 1, 1 ,1, 1);
 
         GameTooltip:Show();
     end);

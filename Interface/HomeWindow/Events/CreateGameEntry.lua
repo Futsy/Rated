@@ -98,7 +98,7 @@ function CreateTimestampAndWinnerArea(name, gameEntry, gameEntryWindow)
     local winnerText = Text(winnerTextWindow, texts.winnerLabel);
     if gameEntry.winner == gameEntry.playerSide then
         winnerText:SetTextColor(0.2, 0.7, 0.2, 1);
-        winnerText:SetText("Win");
+        winnerText:SetText(textInserts.winGameLabel);
     else
         winnerText:SetTextColor(0.7, 0.2, 0.2, 1);
     end

@@ -1,15 +1,15 @@
 function ResolveTitle(rating)
-    local title = titles.Unranked;
+    local title = textInserts.titles.Unranked;
     if (rating >= 2400) then
-        title = titles.Gladiator;
+        title = textInserts.titles.Gladiator;
     elseif (rating >= 2100) then
-        title = titles.Duelist;
+        title = textInserts.titles.Duelist;
     elseif (rating >= 1800) then
-        title = titles.Rival;
+        title = textInserts.titles.Rival;
     elseif (rating >= 1600) then
-        title = titles.Challenger;
+        title = textInserts.titles.Challenger;
     elseif (rating >= 1400) then
-        title = titles.Combatant;
+        title = textInserts.titles.Combatant;
     end
     return title;
 end

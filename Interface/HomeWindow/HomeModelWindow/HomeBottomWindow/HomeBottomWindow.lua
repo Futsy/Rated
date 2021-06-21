@@ -7,7 +7,7 @@ function CreateHomeBottomWindow()
     local currentSpecName = currentSpec and select(2, GetSpecializationInfo(currentSpec)) or "None";
     local localizedClass, englishClass, classIndex = UnitClass("player");
     local playerClass = Text(bottomHeaderWindow, texts.playerClassSpec);
-    playerClass:SetText("Level "..UnitLevel("player").." "..currentSpecName.." "..localizedClass);
+    playerClass:SetText(textInserts.levelPrefix..UnitLevel("player").." "..currentSpecName.." "..localizedClass);
 
     -- Start with title of the season Large
     local classText = Text(bottomHeaderWindow, texts.playerName);

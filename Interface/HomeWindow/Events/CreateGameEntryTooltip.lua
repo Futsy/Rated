@@ -28,7 +28,7 @@ function CreateGameEntryTooltip(name, gameEntry, offset, gameEntryWindow)
 end
 
 function CreateUnratedTooltipParts(name, gameEntry, offset, gameEntryWindow)
-    GameTooltip:AddLine(lightGreyEscapeColor..(gameEntry.playersNum == 6 and "3V3" or "2V2").."|r \n".."Honor", 1, 1, 1);
+    GameTooltip:AddLine(lightGreyEscapeColor..(gameEntry.playersNum == 6 and "3V3" or "2V2").."|r \n"..textInserts.tooltipUnratedName, 1, 1, 1);
     
     GameTooltip:AddTexture(GetFileIDFromPath(bd.PrestigeIcon), {
         width = 32, height = 32,
@@ -40,12 +40,12 @@ function CreateUnratedTooltipParts(name, gameEntry, offset, gameEntryWindow)
         vertexColor = { r = 1, g = 1, b = 1, a = 1 },
     });
     -- Player team
-    GameTooltip:AddLine("\nThis game was finished and recorded at "..date("%H:%M:%S", gameEntry.timeStamp).." on "..date("%d-%m-%Y")..".\n\n");
-    GameTooltip:AddLine(goldEscapeColor.."Your team|r");
+    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y")..".\n\n");
+    GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipYourTeamLabel.."|r");
     GameTooltip:AddLine("\n");
 
     for k, player in ipairs(gameEntry.playerTeam) do
-        GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r\n", whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+        GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r\n", whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
 
         GameTooltip:AddTexture(GetIconForSpec(player), {
             width = 32,
@@ -62,11 +62,11 @@ function CreateUnratedTooltipParts(name, gameEntry, offset, gameEntryWindow)
 
     -- Enemy team
 
-    GameTooltip:AddLine(goldEscapeColor.."Enemy team|r");
+    GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipEnemyTeamLabel.."|r");
     GameTooltip:AddLine("\n");
 
     for k, player in ipairs(gameEntry.enemyTeam) do
-        GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+        GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
 
         GameTooltip:AddTexture(GetIconForSpec(player), {
             width = 32,
@@ -97,18 +97,18 @@ function CreateRatedTooltipParts(name, gameEntry, offset, gameEntryWindow)
     });
 
     -- Player team
-    GameTooltip:AddLine("\nThis game was finished and recorded at "..date("%H:%M:%S", gameEntry.timeStamp).." on "..date("%d-%m-%Y")..".\n\n");
+    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y")..".\n\n");
 
-    GameTooltip:AddLine(goldEscapeColor.."Your team|r");
+    GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipYourTeamLabel.."|r");
     GameTooltip:AddDoubleLine(whiteEscapeColor.."MMR:|r", blueEscapeColor..gameEntry.teamRatingOne.."|r");
-    GameTooltip:AddDoubleLine(whiteEscapeColor.."Bracket:|r", blueEscapeColor..ResolveTitle(gameEntry.teamRatingOne).."|r");
+    GameTooltip:AddDoubleLine(whiteEscapeColor..textInserts.tooltipBracket..":|r", blueEscapeColor..ResolveTitle(gameEntry.teamRatingOne).."|r");
     GameTooltip:AddLine("\n");
 
     for k, player in ipairs(gameEntry.playerTeam) do
         if gameEntry.winner == gameEntry.playerSide then
-            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", winEscapeColor.."+"..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", winEscapeColor.."+"..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
         else
-            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", loseEscapeColor..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", loseEscapeColor..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
         end
         GameTooltip:AddTexture(GetIconForSpec(player), {
             width = 32,
@@ -125,16 +125,16 @@ function CreateRatedTooltipParts(name, gameEntry, offset, gameEntryWindow)
 
     -- Enemy team
 
-    GameTooltip:AddLine(goldEscapeColor.."Enemy team|r");
+    GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipEnemyTeamLabel.."|r");
     GameTooltip:AddDoubleLine(whiteEscapeColor.."MMR:|r", blueEscapeColor..gameEntry.teamRatingZero.."|r");
-    GameTooltip:AddDoubleLine(whiteEscapeColor.."Bracket:|r", blueEscapeColor..ResolveTitle(gameEntry.teamRatingZero).."|r");
+    GameTooltip:AddDoubleLine(whiteEscapeColor..textInserts.tooltipBracket..":|r", blueEscapeColor..ResolveTitle(gameEntry.teamRatingZero).."|r");
     GameTooltip:AddLine("\n");
 
     for k, player in ipairs(gameEntry.enemyTeam) do
         if gameEntry.winner ~= gameEntry.playerSide then
-            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", winEscapeColor.."+"..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", winEscapeColor.."+"..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
         else
-            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", loseEscapeColor..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor.." damage - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor.." healing|r");
+            GameTooltip:AddDoubleLine(whiteEscapeColor..player.name.."|r\n"..lightGreyEscapeColor..player.race.." "..player.talentSpec.." "..player.class.."|r", loseEscapeColor..player.ratingChange.."|r\n"..whiteEscapeColor..GetFormattedNumber(player.damageDone).."|r"..lightGreyEscapeColor..textInserts.tooltipDamage.." - |r"..whiteEscapeColor..GetFormattedNumber(player.healingDone).."|r"..lightGreyEscapeColor..textInserts.tooltipHealing.."|r");
         end
         GameTooltip:AddTexture(GetIconForSpec(player), {
             width = 32,
@@ -152,7 +152,7 @@ function CreateRatedTooltipParts(name, gameEntry, offset, gameEntryWindow)
 end
 
 function CreateMapTooltipParts(gameEntry)
-    GameTooltip:AddLine("\n"..goldEscapeColor.."Map and match data|r");
+    GameTooltip:AddLine("\n"..goldEscapeColor..textInserts.tooltipMapAndMatch);
 
     -- Get the map statistics
     -- Iterate every game and get map specific data
@@ -206,11 +206,11 @@ function CreateMapTooltipParts(gameEntry)
 
     -- Show the map statistics
     if gameEntry.startStamp ~= nil then
-        GameTooltip:AddDoubleLine(lightGreyEscapeColor..GetRealZoneText(gameEntry.map).."|r"..whiteEscapeColor.."\nStart: \nEnded: \nDuration:\nWin-Loss ratio: |r", 
+        GameTooltip:AddDoubleLine(lightGreyEscapeColor..GetRealZoneText(gameEntry.map).."|r"..whiteEscapeColor..textInserts.mapStatsFull, 
             blueEscapeColor.."\n"..date("%H:%M:%S", gameEntry.startStamp).."\n"..date("%H:%M:%S", gameEntry.timeStamp).."\n"..date("%M:%S", gameEntry.timeStamp - gameEntry.startStamp).."\n"..floor((gamesWon / gamesPlayed)*100).."%|r"
             , 1, 1, 1, 1, 1, 1);
     else
-        GameTooltip:AddDoubleLine(lightGreyEscapeColor..GetRealZoneText(gameEntry.map).."|r"..whiteEscapeColor.."\nEnded: \nWin-Loss ratio: |r", 
+        GameTooltip:AddDoubleLine(lightGreyEscapeColor..GetRealZoneText(gameEntry.map).."|r"..whiteEscapeColor..textInserts.mapStatsSmall, 
             blueEscapeColor.."\n"..date("%H:%M:%S", gameEntry.timeStamp).."\n"..floor((gamesWon / gamesPlayed)*100).."%|r"
             , 1, 1, 1, 1, 1, 1);
     end
@@ -244,17 +244,17 @@ function CreateMapTooltipParts(gameEntry)
         end
     end
     
-    GameTooltip:AddLine("\n"..goldEscapeColor.."Talents|r");
+    GameTooltip:AddLine("\n"..goldEscapeColor..textInserts.tooltipTalents);
     if gameEntry.playerPersonalTalents == nil or gameEntry.playerPersonalPvpTalents == nil then
-        GameTooltip:AddLine(whiteEscapeColor.."Either this game was recorded with an old version or the data got corrupted :(|r");
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.errorCorruptData);
     else
         GameTooltip:AddLine("\n"..stringLine);
     end
 
-    GameTooltip:AddLine("\n\n"..goldEscapeColor.."Your trinkets|r");
+    GameTooltip:AddLine("\n\n"..goldEscapeColor..textInserts.tooltipTrinkets);
     if gameEntry.trinkOne ~= nil then
         GameTooltip:AddLine("\n");
-        GameTooltip:AddDoubleLine("\n"..whiteEscapeColor..gameEntry.trinkOne[1].name, "\n"..blueEscapeColor..gameEntry.trinkOne[1].iLevel.." item level|r");
+        GameTooltip:AddDoubleLine("\n"..whiteEscapeColor..gameEntry.trinkOne[1].name, "\n"..blueEscapeColor..gameEntry.trinkOne[1].iLevel..textInserts.tooltipIlevel);
         GameTooltip:AddTexture(gameEntry.trinkOne[1].texture, {
             width = 42,
             height = 42,
@@ -267,7 +267,7 @@ function CreateMapTooltipParts(gameEntry)
         });
     end
     if gameEntry.trinkTwo ~= nil then
-        GameTooltip:AddDoubleLine("\n"..whiteEscapeColor..gameEntry.trinkTwo[1].name, "\n"..blueEscapeColor..gameEntry.trinkTwo[1].iLevel.." item level|r");
+        GameTooltip:AddDoubleLine("\n"..whiteEscapeColor..gameEntry.trinkTwo[1].name, "\n"..blueEscapeColor..gameEntry.trinkTwo[1].iLevel..textInserts.tooltipIlevel);
         GameTooltip:AddTexture(gameEntry.trinkTwo[1].texture, {
             width = 42,
             height = 42,
@@ -281,7 +281,7 @@ function CreateMapTooltipParts(gameEntry)
     end
 
     if gameEntry.trinkOne == nil and gameEntry.trinkTwo == nil then
-        GameTooltip:AddLine(whiteEscapeColor.."Either this game was recorded with an old version or the data got corrupted :(|r");
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.errorCorruptData);
     end
 end
 

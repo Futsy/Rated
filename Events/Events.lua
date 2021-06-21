@@ -5,13 +5,48 @@ function AddonLoaded(instance)
         instance:RegisterEvent("PVP_RATED_STATS_UPDATE");
         RequestRatedInfo();
         
+        -- set the correct local values
+        local locale = GetLocale();
+        if locale == "frFR" then
+            texts = frenchTexts;
+            textInserts = textInsertsFrench;
+        elseif locale == "deDE" then
+            texts = germanTexts;
+            textInserts = textInsertsGerman;
+        elseif locale == "itIT" then
+            texts = italianTexts;
+            textInserts = textInsertsItalian;
+        elseif locale == "koKR" then
+            texts = koreanTexts;
+            textInserts = textInsertsKorean;
+        elseif locale == "zhCN" then
+            texts = chineseChinaTexts;
+            textInserts = textInsertsChineseChina;
+        elseif locale == "zhTW" then
+            texts = chineseTaiwanTexts;
+            textInserts = textInsertsChineseTaiwan;
+        elseif locale == "ruRU" then
+            texts = russianTexts;
+            textInserts = textInsertsRussian;
+        elseif locale == "esES" then
+            texts = spanishTexts;
+            textInserts = textInsertsSpanish;
+        elseif locale == "esMX" then
+            texts = spanishTexts;
+            textInserts = textInsertsSpanish;
+        elseif locale == "ptBR" then
+            texts = portugueseTexts;
+            textInserts = textInsertsPortuguese;
+        else
+        end
+
         addonInitialized = true;
     end
 end
 
 function PVPMatchCompleted()
     if not arenaGreeting then
-        DEFAULT_CHAT_FRAME:AddMessage("Corrupt team composition so Rated didn't save the game. (Were you doing 2v3/1v2/etc?)");
+        DEFAULT_CHAT_FRAME:AddMessage(textInserts.errorCorruptionGame);
         return;
     end
     if IsRankedMatch() or IsSkirmish() then

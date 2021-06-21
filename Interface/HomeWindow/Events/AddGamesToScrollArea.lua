@@ -104,19 +104,19 @@ function CreateDayHeader(i, offset, currentDay)
     if wins > 0 or losses > 0 then
         if wins == 1 and losses == 1 then
             dayHeaderWindow:SetScript("OnEnter", function(self, motion)
-                dayHeaderText:SetText("1 win - 1 loss");
+                dayHeaderText:SetText(textInserts.headerOneWin.." - "..textInserts.headerOneLoss);
             end);
         elseif wins == 1 then
             dayHeaderWindow:SetScript("OnEnter", function(self, motion)
-                dayHeaderText:SetText("1 win - "..losses.." losses");
+                dayHeaderText:SetText(textInserts.headerOneWin.." - "..losses..textInserts.headerLosses);
             end);
         elseif losses == 1 then
             dayHeaderWindow:SetScript("OnEnter", function(self, motion)
-                dayHeaderText:SetText(wins.." wins - 1 loss");
+                dayHeaderText:SetText(wins..textInserts.headerWins.." - "..textInserts.headerOneLoss);
             end);
         else
             dayHeaderWindow:SetScript("OnEnter", function(self, motion)
-                dayHeaderText:SetText(wins.." wins - "..losses.." losses");
+                dayHeaderText:SetText(wins..textInserts.headerWins.." - "..losses..textInserts.headerLosses);
             end);
         end
     end

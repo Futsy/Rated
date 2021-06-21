@@ -13,7 +13,7 @@ function CreateMinimapIcon(texture)
         tocname = "RatedIcon",
         OnTooltipShow = function(tooltip)
             tooltip:SetText("Rated");
-            tooltip:AddLine("Welcome back "..ResolveTitle(HighestSeasonRank()).." "..UnitName("player"), 1, 1, 1);
+            tooltip:AddLine(textInserts.welcomeTooltipText..ResolveTitle(HighestSeasonRank()).." "..UnitName("player"), 1, 1, 1);
             tooltip:Show();
         end,
         OnClick = function(_, button)

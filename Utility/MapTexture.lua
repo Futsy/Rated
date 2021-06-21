@@ -42,31 +42,31 @@ end
 
 function GetExpansionForMap(id)
     if id == 1134 then
-        return "Mists of pandaria";
+        return textInserts.expansions.mists;
     elseif id == 2373 then
-        return "Shadowlands";
+        return textInserts.expansions.sl;
     elseif id == 2167 then
-        return "Battle for azeroth";
+        return textInserts.expansions.bfa;
     elseif id == 617 then
-        return "Wrath of the lich king";
+        return textInserts.expansions.wotlk;
     elseif id == 980 then
-        return "Mists of pandaria";
+        return textInserts.expansions.mists;
     elseif id == 572 then
-        return "Burning crusade";
+        return textInserts.expansions.bc;
     elseif id == 1672 then
-        return "Burning crusade";
+        return textInserts.expansions.bc;
     elseif id == 1552 then
-        return "Legion";
+        return textInserts.expansions.legion;
     elseif id == 1911 then
-        return "Battle for azeroth";
+        return textInserts.expansions.bfa;
     elseif id == 1504 then
-        return "Legion";
+        return textInserts.expansions.legion;
     elseif id == 1825 then
-        return "Battle for azeroth";
+        return textInserts.expansions.bfa;
     elseif id == 1505 then
-        return "Burning crusade";
+        return textInserts.expansions.bc;
     else
-        return "Unknown";
+        return textInserts.expansions.unknown;
     end
 end
 
