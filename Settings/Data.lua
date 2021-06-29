@@ -99,7 +99,7 @@ texts = {
 };
 textInserts = {
     -- Season names
-    seasonUpgrade = "Upgrade addon",
+    seasonUpgrade = "Off-season",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
@@ -211,7 +211,7 @@ germanTexts = {
 };
 textInsertsGerman = {
     -- Season names
-    seasonUpgrade = "Upgrade addon",
+    seasonUpgrade = "Off-season",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
@@ -323,7 +323,7 @@ koreanTexts = {
 };
 textInsertsKorean = {
     -- Season names
-    seasonUpgrade = "애드온 업그레이드",
+    seasonUpgrade = "비수기",
     seasonThirty = "죄 많은",
     seasonThirtyOne = "체인되지 않음",
 
@@ -435,7 +435,7 @@ chineseChinaTexts = {
 };
 textInsertsChineseChina = {
     -- Season names
-    seasonUpgrade = "升级插件",
+    seasonUpgrade = "淡季",
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
 
@@ -547,7 +547,7 @@ chineseTaiwanTexts = {
 };
 textInsertsChineseTaiwan = {
     -- Season names
-    seasonUpgrade = "升级插件",
+    seasonUpgrade = "淡季",
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
 
@@ -659,7 +659,7 @@ russianTexts = {
 };
 textInsertsRussian = {
     -- Season names
-    seasonUpgrade = "Обновить аддон",
+    seasonUpgrade = "Межсезонье",
     seasonThirty = "Греховный",
     seasonThirtyOne = "Освобожденный",
 
@@ -771,7 +771,7 @@ spanishTexts = {
 };
 textInsertsSpanish = {
     -- Season names
-    seasonUpgrade = "Complemento de actualización",
+    seasonUpgrade = "Fuera de temporada",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
@@ -883,7 +883,7 @@ portugueseTexts = {
 };
 textInsertsPortuguese = {
     -- Season names
-    seasonUpgrade = "Complemento de atualização",
+    seasonUpgrade = "Entressafra",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
@@ -995,7 +995,7 @@ frenchTexts = {
 };
 textInsertsFrench = {
     -- Season names
-    seasonUpgrade = "Mise à jour addon",
+    seasonUpgrade = "Hors saison",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
@@ -1107,7 +1107,7 @@ italianTexts = {
 };
 textInsertsItalian = {
     -- Season names
-    seasonUpgrade = "Aggiornamento aggiuntivo",
+    seasonUpgrade = "Fuori stagione",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
 
