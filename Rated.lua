@@ -28,6 +28,11 @@ function events:ARENA_PREP_OPPONENT_SPECIALIZATIONS()
         DEFAULT_CHAT_FRAME:AddMessage("\124cff00FF7FRated: Please don't afk out and the game will be recorded. GL HF :)");
         arenaGreeting = true;
         NotifyInspect("player");
+        -- NotifyInspect("party1");
+        -- local membersCount = GetNumGroupMembers();
+        -- if membersCount >= 3 then
+        --     NotifyInspect("party2");
+        -- end
     end
 end
 
