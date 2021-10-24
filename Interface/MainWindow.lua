@@ -129,14 +129,24 @@ function CreateMainWindow()
         nil, 0, -22
     );
     
+    local randomBackground = math.floor(math.random(0, 2), 0);
+    local bgString = "";
+    if randomBackground == 0 then
+        bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance or bd.BgHorde;
+    elseif randomBackground == 1 then
+        bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance2 or bd.BgHorde2;
+    elseif randomBackground == 2 then
+        bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance3 or bd.BgHorde3;
+    end
+    
     callbacks.themedBackgroundWindow:SetBackdrop({
-        bgFile = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance or bd.BgHorde,
+        bgFile = bgString,
         insets = { left = 4, right = 4, top = 0, bottom = 4 }
     });
 
     -- Manually set the texture because SetBackdrop doesn't allow for TexCoord
     callbacks.backgroundTexture = callbacks.themedBackgroundWindow:CreateTexture(nil, "BACKGROUND");
-    callbacks.backgroundTexture:SetTexture(UnitFactionGroup("player") == "Alliance" and bd.BgAlliance or bd.BgHorde);
+    callbacks.backgroundTexture:SetTexture(bgString);
     callbacks.backgroundTexture:SetPoint("TOPLEFT", 4, 0);
     callbacks.backgroundTexture:SetHeight(callbacks.themedBackgroundWindow:GetHeight() - 3);
     callbacks.backgroundTexture:SetWidth(callbacks.themedBackgroundWindow:GetWidth() - 7);
