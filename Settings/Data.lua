@@ -7,11 +7,17 @@ bd = {
     BannerEmblem = "Interface\\PVPFrame\\Icons\\PVP-Banner-Emblem-94",
     ClassicLogo = "Interface\\GLUES\\COMMON\\GLUES-WOW-CLASSICLOGO",
     PrestigeIcon = "Interface\\PVPFrame\\Icons\\prestige-icon-4-2",
-    BgHorde = "Interface\\PVPFRAME\\ScoreboardBackgroundWarfrontsHorde",
+    BgHorde = "Interface\\PVPFrame\\ScoreboardBackgroundWarfrontsHorde",
     BgAlliance = "Interface\\PVPFRAME\\ScoreboardBackgroundWarfrontsAlliance",
     ButtonUp = "Interface\\Buttons\\UI-Panel-MinimizeButton-Up",
     ButtonHighlight = "Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight",
     ButtonDown = "Interface\\Buttons\\UI-Panel-MinimizeButton-Down",
+    MinUp = "Interface\\Buttons\\UI-Panel-BiggerButton-Up",
+    MinHighlight = "Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight",
+    MinDown = "Interface\\Buttons\\UI-Panel-BiggerButton-Down",
+    MaxUp = "Interface\\Buttons\\UI-Panel-SmallerButton-Up",
+    MaxHighlight = "Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight",
+    MaxDown = "Interface\\Buttons\\UI-Panel-SmallerButton-Down",
     BgScore = "Interface\\WORLDSTATEFRAME\\WorldStateFinalScoreFrame-TopBackground",
     Disconnect = "Interface\\CHARACTERFRAME\\Disconnect-Icon",
     RankedIcon = "Interface\\PVPFrame\\Icons\\UI_RankedPvP"
@@ -37,7 +43,17 @@ callbacks = {
     gameScrollArea = nil,
     containerFrame = nil,
     firstDayHeaderWindow = nil,
+    backgroundTexture = nil,
+    bottomHeaderWindow = nil,
+    topHeaderWindow = nil,
+    highestHeaderWindow = nil,
+    twosHeaderWindow = nil,
+    threesHeaderWindow = nil
 };
+
+-- Frames for the game entries and headers
+gameEntryHandles = {};
+sectionHandles = {};
 
 -- Colors for text and other things
 colors = {
@@ -62,12 +78,14 @@ fonts = {
     gameFontBig = "Game27Font",
     gameFontVeryBig = "Game30Font",
     gameFontRegular = "GameFontNormal",
+    fancyFontMini = "Fancy16Font",
     fancyFontSmall = "Fancy18Font",
     fancyFontRegular = "Fancy20Font",
     fancyFontBig = "Fancy32Font",
     gameFontRegularShadow = "Game13FontShadow",
     FriendsFont = "FriendsFont_Large",
-    addonSpecial = "Game12Font_o1"
+    addonSpecial = "Game12Font_o1",
+    SysFontShadowHuge = "SystemFont_Shadow_Large2"
 };
 
 
@@ -75,10 +93,8 @@ fonts = {
 -- English/US
 --
 texts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "This session" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Current session" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -86,7 +102,7 @@ texts = {
     vsTextEntry = { fonts.FriendsFont, colors.white, nil, 178, -13, "VS" },
     noGames = { fonts.gameFontVeryBig, colors.grey, "CENTER", 0, 0, "No games registered" },
     playerClassSpec = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, -5, "" },
-    playerName = { fonts.fancyFontRegular, colors.white, "CENTER", 0, 13, "" },
+    playerName = { fonts.fancyFontMini, colors.white, "CENTER", 0, 13, "" },
     highestHeaderLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 18, "Season high" },
     seasonHighLabel = { fonts.fancyFontSmall, colors.white, "CENTER", 0, 0, "" },
     twosHighestLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 18, "2v2" },
@@ -187,10 +203,8 @@ textInserts = {
 -- German
 --
 germanTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Diese sitzung" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Diese sitzung" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -299,10 +313,8 @@ textInsertsGerman = {
 -- Korean
 --
 koreanTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "이 세션" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "이 세션" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "부정한" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -411,10 +423,8 @@ textInsertsKorean = {
 -- Chinese (simplified)
 --
 chineseChinaTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "本期" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "本期" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "腐败" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -523,10 +533,8 @@ textInsertsChineseChina = {
 -- Chinese (taiwan)
 --
 chineseTaiwanTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "本期" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "本期" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "腐败" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -635,10 +643,8 @@ textInsertsChineseTaiwan = {
 -- Russian
 --
 russianTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Эта сессия" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Эта сессия" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "гнить" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -124, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -54, -13, "" },
@@ -747,10 +753,8 @@ textInsertsRussian = {
 -- Spanish
 --
 spanishTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Esta sesión" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Esta sesión" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -859,10 +863,8 @@ textInsertsSpanish = {
 -- Portuguese
 --
 portugueseTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Esta sesión" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Esta sesión" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -971,10 +973,8 @@ textInsertsPortuguese = {
 -- French
 --
 frenchTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Cette session" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Cette session" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },
@@ -1083,10 +1083,8 @@ textInsertsFrench = {
 -- Italian
 --
 italianTexts = {
-    dayHeaderPipe = { fonts.FriendsFont, colors.white, "CENTER", 0, 20, "|" },
-    dayText = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "" },
-    pipeSeparator = { fonts.FriendsFont, colors.white, "CENTER", 0, -17, "|" },
-    sessionHeader = { fonts.FriendsFont, colors.white, "CENTER", 0, 0, "Questa sessione" },
+    dayText = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "" },
+    sessionHeader = { fonts.SysFontShadowHuge, colors.white, "RIGHT", -21, -20, "Questa sessione" },
     formatText = { fonts.FriendsFont, colors.white, nil, 40, -13, "COR" },
     newRatingLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -119, -13, "" },
     timestampLabel = { fonts.FriendsFont, colors.white, "TOPRIGHT", -49, -13, "" },

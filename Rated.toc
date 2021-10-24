@@ -26,6 +26,7 @@ Settings\Data.lua
 
 StateChanges\DisplayInterface.lua
 StateChanges\OpenHome.lua
+StateChanges\ResizeWindow.lua
 
 Utility\Animations.lua
 Utility\FrameUtil.lua

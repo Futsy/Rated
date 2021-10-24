@@ -1,5 +1,5 @@
 function CreateHomeModelWindow()
-    callbacks.homeModelWindow = Position(nil, callbacks.homeWindow, 1, (GetScreenWidth() * UIParent:GetEffectiveScale()) * 0.2, (GetScreenHeight() * UIParent:GetEffectiveScale()) - 24, nil, 0, 0);
+    callbacks.homeModelWindow = Position(nil, callbacks.homeWindow, 1, callbacks.homeWindow:GetWidth() * 0.2, callbacks.homeWindow:GetHeight(), nil, 0, 0);
     callbacks.homeModelWindow:Hide();
 
     -- Create the underlying elements

@@ -42,6 +42,7 @@ end
 
 function CreateGameEntryBox(name, offset)
     local gameEntryWindow = Position(nil, callbacks.containerFrame, 1, callbacks.gameScrollerWindow:GetWidth() - 28, 40, nil, 5, -offset);
+    tinsert(gameEntryHandles, gameEntryWindow);
     gameEntryWindow:SetBackdrop({
         bgFile = bd.TooltipBg, 
         edgeFile = bd.TooltipBor, 

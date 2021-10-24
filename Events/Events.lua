@@ -40,6 +40,12 @@ function AddonLoaded(instance)
         else
         end
 
+        if data.minimized == nil then
+            -- Determines in what state the window is
+            data.minimized = true;
+            data.width = 800;
+            data.height = 600;
+        end
         addonInitialized = true;
     end
 end

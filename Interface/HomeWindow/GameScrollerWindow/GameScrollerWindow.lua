@@ -1,5 +1,5 @@
 function CreateGameScrollerWindow()
-    callbacks.gameScrollerWindow = Position(nil, callbacks.homeWindow, 1, (GetScreenWidth() * UIParent:GetEffectiveScale()) * 0.8, (GetScreenHeight() * UIParent:GetEffectiveScale()) - 24, nil, (GetScreenWidth() * UIParent:GetEffectiveScale()) * 0.2, 0);
+    callbacks.gameScrollerWindow = Position(nil, callbacks.homeWindow, 1, callbacks.homeWindow:GetWidth() * 0.8, callbacks.homeWindow:GetHeight(), nil, callbacks.homeWindow:GetWidth() * 0.2, 0);
     callbacks.gameScrollerWindow:Hide();
 
     -- Create the no games window

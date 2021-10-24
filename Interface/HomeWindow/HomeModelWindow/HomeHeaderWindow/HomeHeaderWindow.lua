@@ -8,64 +8,64 @@ function CreateHomeHeaderWindow()
     --
 
     -- Create a container for the season title that sticks to the top
-    local topHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.1, nil, 0, 0);
+    callbacks.topHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.1, nil, 0, -10);
 
     -- Start with season text
-    Text(topHeaderWindow, texts.seasonLabel);
+    Text(callbacks.topHeaderWindow, texts.seasonLabel);
 
     -- Start with title of the season Large
-    callbacks.seasonTitleText = Text(topHeaderWindow, texts.seasonName);
+    callbacks.seasonTitleText = Text(callbacks.topHeaderWindow, texts.seasonName);
     callbacks.seasonTitleText:SetText(GetCurrentSeasonTitle());
 
-    CreateTooltipForSeasonHeader(topHeaderWindow);
+    CreateTooltipForSeasonHeader(callbacks.topHeaderWindow);
 
     --
     -- Display highest obtained rank
     --
 
     -- Create a container for the badge
-    local highestHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.1));
+    callbacks.highestHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.1) - 10);
     
     -- Show highest text
-    Text(highestHeaderWindow, texts.highestHeaderLabel);
+    Text(callbacks.highestHeaderWindow, texts.highestHeaderLabel);
 
     -- Show the highest earned rank
-    callbacks.seasonHighestText = Text(highestHeaderWindow, texts.seasonHighLabel);
+    callbacks.seasonHighestText = Text(callbacks.highestHeaderWindow, texts.seasonHighLabel);
     callbacks.seasonHighestText:SetText(ResolveTitle(HighestSeasonRank()));
 
-    CreateTooltipForSeasonHigh(highestHeaderWindow);
+    CreateTooltipForSeasonHigh(callbacks.highestHeaderWindow);
 
     --
     -- Display 2v2 current
     --
 
     -- Create a container for the badge
-    local twosHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.17));
+    callbacks.twosHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.17) - 10);
 
     -- Show highest text
-    Text(twosHeaderWindow, texts.twosHighestLabel);
+    Text(callbacks.twosHeaderWindow, texts.twosHighestLabel);
 
     -- Show the highest earned rank
-    callbacks.twosCurrentText = Text(twosHeaderWindow, texts.twosHighestDetail);
+    callbacks.twosCurrentText = Text(callbacks.twosHeaderWindow, texts.twosHighestDetail);
     callbacks.twosCurrentText:SetText(data.twoVTwoRating);
 
-    CreateTooltipForTwosCurrent(twosHeaderWindow);
+    CreateTooltipForTwosCurrent(callbacks.twosHeaderWindow);
 
     --
     -- Display 3v3 current
     --
 
     -- Create a container for the badge
-    local threesHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.24));
+    callbacks.threesHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.24) - 10);
     
     -- Show highest text
-    Text(threesHeaderWindow, texts.threesHighestLabel);
+    Text(callbacks.threesHeaderWindow, texts.threesHighestLabel);
 
     -- Show the highest earned rank
-    callbacks.threesCurrentText = Text(threesHeaderWindow, texts.threesHighestDetail);
+    callbacks.threesCurrentText = Text(callbacks.threesHeaderWindow, texts.threesHighestDetail);
     callbacks.threesCurrentText:SetText(data.threeVThreeRating);
 
-    threesHeaderWindow:SetScript("OnEnter", function(self, motion)
+    callbacks.threesHeaderWindow:SetScript("OnEnter", function(self, motion)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
@@ -91,7 +91,7 @@ function CreateHomeHeaderWindow()
 
         GameTooltip:Show();
     end);
-    threesHeaderWindow:SetScript("OnLeave", function(self, motion)
+    callbacks.threesHeaderWindow:SetScript("OnLeave", function(self, motion)
         GameTooltip:Hide();
     end);
 end

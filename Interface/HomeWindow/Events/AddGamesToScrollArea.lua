@@ -85,7 +85,6 @@ end
 
 function CreateDayHeader(i, offset, currentDay)
     local dayHeaderWindow = Position(nil, callbacks.containerFrame, nil, callbacks.gameScrollerWindow:GetWidth() - 10, 70, nil, 5, -offset);
-    Text(dayHeaderWindow, texts.dayHeaderPipe);
 
     local wins = 0;
     local losses = 0;
@@ -100,6 +99,7 @@ function CreateDayHeader(i, offset, currentDay)
     end
 
     local dayHeaderText = Text(dayHeaderWindow, texts.dayText);
+    tinsert(sectionHandles, dayHeaderWindow);
     dayHeaderText:SetText(currentDay);
     if wins > 0 or losses > 0 then
         if wins == 1 and losses == 1 then
@@ -123,13 +123,10 @@ function CreateDayHeader(i, offset, currentDay)
     dayHeaderWindow:SetScript("OnLeave", function(self, motion)
         dayHeaderText:SetText(currentDay);
     end);
-    
-    Text(dayHeaderWindow, texts.pipeSeparator);
 end
 
 function CreateFirstHeaderEntry()
     callbacks.firstDayHeaderWindow = Position(nil, callbacks.gameScrollArea, nil, callbacks.gameScrollerWindow:GetWidth() - 10, 70, nil, 5, 0);
-
+    tinsert(sectionHandles, callbacks.firstDayHeaderWindow);
     Text(callbacks.firstDayHeaderWindow, texts.sessionHeader);
-    Text(callbacks.firstDayHeaderWindow, texts.pipeSeparator);
 end
