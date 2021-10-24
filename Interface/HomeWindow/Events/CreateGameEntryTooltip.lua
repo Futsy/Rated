@@ -39,8 +39,9 @@ function CreateUnratedTooltipParts(name, gameEntry, offset, gameEntryWindow)
         texCoords = { left = 0, right = 1, top = 0, bottom = 1 },
         vertexColor = { r = 1, g = 1, b = 1, a = 1 },
     });
+    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y", gameEntry.timeStamp)..".\n\n");
+
     -- Player team
-    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y")..".\n\n");
     GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipYourTeamLabel.."|r");
     GameTooltip:AddLine("\n");
 
@@ -97,7 +98,7 @@ function CreateRatedTooltipParts(name, gameEntry, offset, gameEntryWindow)
     });
 
     -- Player team
-    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y")..".\n\n");
+    GameTooltip:AddLine("\n"..textInserts.tooltipFinishedLabel..date("%H:%M:%S", gameEntry.timeStamp)..textInserts.tooltipFinishedDateInterval..date("%d-%m-%Y", gameEntry.timeStamp)..".\n\n");
 
     GameTooltip:AddLine(goldEscapeColor..textInserts.tooltipYourTeamLabel.."|r");
     GameTooltip:AddDoubleLine(whiteEscapeColor.."MMR:|r", blueEscapeColor..gameEntry.teamRatingOne.."|r");
