@@ -17,7 +17,7 @@ function CreateMinimapIcon(texture)
             tooltip:Show();
         end,
         OnClick = function(_, button)
-            if ratedInfoGatheredAtleastOnce then
+            if ratedInfoGatheredAtleastOnce and skirmishInfoGatheredAtleastOnce then
                 DisplayAddonFrame();
             end
         end

@@ -219,6 +219,34 @@ function PVPMatchCompleted()
     end
 end
 
+function SkirmishStatsUpdated()
+    local skirmishRating, skirmishSeasonPlayed, skirmishSeasonWon, skirmishWeeklyPlayed, skirmishWeeklyWon = GetInspectArenaData(5);
+
+    if skirmishRating == nil 
+        or data.skirmishRating == nil 
+        or data.skirmishSeasonWon == nil 
+        or data.skirmishWeeklyPlayed == nil 
+        or data.skirmishWeeklyWon == nil then
+        return;
+    end
+
+    data.skirmishRating = skirmishRating;
+    data.skirmishSeasonPlayed = skirmishSeasonPlayed;
+    data.skirmishSeasonWon = skirmishSeasonWon;
+    data.skirmishWeeklyPlayed = skirmishWeeklyPlayed;
+    data.skirmishWeeklyWon = skirmishWeeklyWon;
+    data.skirmishishBracket = ResolveTitle(skirmishRating);
+
+    skirmishInfoGatheredAtleastOnce = true;
+    SkirmishStatsUpdatedInterface();
+end
+
+function SkirmishStatsUpdatedInterface()
+    if callbacks.mainWindow ~= nil and callbacks.skirmishCurrentText ~= nil then
+        callbacks.skirmishCurrentText:SetText(data.skirmishRating);
+    end
+end
+
 function RatedStatsUpdated()
     local twos = 1;
     local threes = 2;

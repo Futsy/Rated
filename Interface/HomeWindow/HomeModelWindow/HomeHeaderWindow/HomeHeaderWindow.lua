@@ -94,6 +94,50 @@ function CreateHomeHeaderWindow()
     callbacks.threesHeaderWindow:SetScript("OnLeave", function(self, motion)
         GameTooltip:Hide();
     end);
+
+    
+    --
+    -- Display Skirmish current
+    --
+    callbacks.skirmishHeaderWindow = Position(nil, callbacks.homeModelWindow, nil, callbacks.homeModelWindow:GetWidth(), callbacks.homeModelWindow:GetHeight() * 0.07, nil, 0, -(callbacks.homeModelWindow:GetHeight() * 0.31) - 10);
+    
+    -- Show highest text
+    Text(callbacks.skirmishHeaderWindow, texts.skirmishHighestLabel);
+
+    -- Show the highest earned rank
+    callbacks.skirmishCurrentText = Text(callbacks.skirmishHeaderWindow, texts.skirmishHighestDetail);
+    callbacks.skirmishCurrentText:SetText(data.skirmishRating);
+
+    CreateTooltipForSkirmish(callbacks.skirmishHeaderWindow);
+end
+
+
+function CreateTooltipForSkirmish(frame)
+    frame:SetScript("OnEnter", function(self, motion)
+        GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
+        GameTooltip:ClearLines();
+
+        GameTooltip:AddLine(textInserts.skirmishHeader);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.skirmishSummary, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.skirmishRating).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.skirmishRating.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine("\n");
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.skirmishSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.skirmishSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.skirmishSeasonPlayed - data.skirmishSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddLine("\n");
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek, 1, 1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.skirmishWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.skirmishWeeklyWon.."|r", 1, 1, 1, 1 ,1, 1);
+        GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.skirmishWeeklyPlayed - data.skirmishWeeklyWon).."|r", 1, 1, 1, 1 ,1, 1);
+
+        GameTooltip:Show();
+    end);
+    frame:SetScript("OnLeave", function(self, motion)
+        GameTooltip:Hide();
+    end);
 end
 
 function CreateTooltipForSeasonHeader(frame)

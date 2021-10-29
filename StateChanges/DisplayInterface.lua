@@ -1,6 +1,6 @@
 function DisplayAddonFrame()
     if callbacks.mainWindow == nil then
-        if ratedInfoGatheredAtleastOnce then
+        if ratedInfoGatheredAtleastOnce and skirmishInfoGatheredAtleastOnce then
             CreateMainWindow();
             OpenHome();
             AddGamesToScrollArea();

@@ -7,6 +7,7 @@ local events = {};
 -- State related variables
 arenaGreeting = false;
 ratedInfoGatheredAtleastOnce = false;
+skirmishInfoGatheredAtleastOnce = false;
 startTime = nil;
 
 function events:ADDON_LOADED()
@@ -20,6 +21,16 @@ end
 
 function events:PVP_MATCH_COMPLETE(winner, duration)
     PVPMatchCompleted();
+end
+
+function events:PLAYER_ENTERING_WORLD()
+	NotifyInspect("player");
+end
+
+function events:INSPECT_READY()
+    if (UnitExists("player")) then
+        SkirmishStatsUpdated();
+    end
 end
 
 function events:ARENA_PREP_OPPONENT_SPECIALIZATIONS()
