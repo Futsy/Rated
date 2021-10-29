@@ -223,10 +223,10 @@ function SkirmishStatsUpdated()
     local skirmishRating, skirmishSeasonPlayed, skirmishSeasonWon, skirmishWeeklyPlayed, skirmishWeeklyWon = GetInspectArenaData(5);
 
     if skirmishRating == nil 
-        or data.skirmishRating == nil 
-        or data.skirmishSeasonWon == nil 
-        or data.skirmishWeeklyPlayed == nil 
-        or data.skirmishWeeklyWon == nil then
+        or skirmishRating == nil 
+        or skirmishSeasonWon == nil 
+        or skirmishWeeklyPlayed == nil 
+        or skirmishWeeklyWon == nil then
         return;
     end
 
