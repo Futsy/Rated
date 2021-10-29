@@ -27,8 +27,8 @@ function events:PLAYER_ENTERING_WORLD()
 	NotifyInspect("player");
 end
 
-function events:INSPECT_READY()
-    if (UnitExists("player")) then
+function events:INSPECT_READY(guid)
+    if (UnitGUID("player") == guid) then
         SkirmishStatsUpdated();
     end
 end
