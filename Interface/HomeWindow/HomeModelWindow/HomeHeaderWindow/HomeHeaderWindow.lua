@@ -1,6 +1,7 @@
 local whiteEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 255);
 local blueEscapeColor = string.format("|cff%02x%02x%02x", 225, 225, 255);
 local goldEscapeColor = string.format("|cff%02x%02x%02x", 255, 255, 125);
+local darkGoldEscapeColor = string.format("|cff%02x%02x%02x", 255, 235, 55);
 
 function CreateHomeHeaderWindow()
     --
@@ -69,20 +70,20 @@ function CreateHomeHeaderWindow()
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine(textInserts.threesHeader);
-        GameTooltip:AddLine(whiteEscapeColor..textInserts.threesSummary, 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddLine(darkGoldEscapeColor..textInserts.threesHeader.."|r", 1, 1, 1);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.threesSummary.."|r", 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeRating).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.threeVThreeRating.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.threeVThreeSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.threeVThreeSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.threeVThreeSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.threeVThreeSeasonPlayed - data.threeVThreeSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.threeVThreeWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.threeVThreeWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.threeVThreeWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
@@ -117,13 +118,13 @@ function CreateTooltipForSkirmish(frame)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine(textInserts.skirmishHeader);
-        GameTooltip:AddLine(whiteEscapeColor..textInserts.skirmishSummary, 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddLine(darkGoldEscapeColor..textInserts.skirmishHeader.."|r", 1, 1, 1);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.skirmishSummary.."|r", 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.skirmishRating).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.skirmishRating.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.skirmishSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.skirmishSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.skirmishSeasonPlayed - data.skirmishSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
@@ -148,7 +149,7 @@ function CreateTooltipForSeasonHeader(frame)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine(textInserts.seasonInfo);
+        GameTooltip:AddLine(darkGoldEscapeColor..textInserts.seasonInfo.."|r", 1, 1, 1);
         GameTooltip:AddLine(whiteEscapeColor..textInserts.seasonFunReminder, 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.tooltipNameLabel, blueEscapeColor..GetCurrentSeasonTitle().."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.tooltipNumberLabel, blueEscapeColor..currentSeasonNumber.."|r", 1, 1, 1, 1 ,1, 1);
@@ -166,8 +167,8 @@ function CreateTooltipForSeasonHigh(frame)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine(textInserts.seasonHeader);
-        GameTooltip:AddLine(whiteEscapeColor..textInserts.seasonSummary, 1, 1, 1);
+        GameTooltip:AddLine(darkGoldEscapeColor..textInserts.seasonHeader.."|r", 1, 1, 1);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.seasonSummary.."|r", 1, 1, 1);
         GameTooltip:AddLine(goldEscapeColor.."2v2|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.tooltipHighestTitle, blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.tooltipSeasonHighest, blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
@@ -190,20 +191,20 @@ function CreateTooltipForTwosCurrent(frame)
         GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT");
         GameTooltip:ClearLines();
 
-        GameTooltip:AddLine(textInserts.twosHeader);
-        GameTooltip:AddLine(whiteEscapeColor..textInserts.twosSummary, 1, 1, 1);
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent, 1, 1, 1);
+        GameTooltip:AddLine(darkGoldEscapeColor..textInserts.twosHeader.."|r", 1, 1, 1);
+        GameTooltip:AddLine(whiteEscapeColor..textInserts.twosSummary.."|r", 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixCurrent.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoRating).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixRating, blueEscapeColor..data.twoVTwoRating.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixSeason.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoSeasonBest).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.twoVTwoSeasonBest.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.twoVTwoSeasonPlayed.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixWon, blueEscapeColor..data.twoVTwoSeasonWon.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixLost, blueEscapeColor..(data.twoVTwoSeasonPlayed - data.twoVTwoSeasonWon).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddLine("\n");
-        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek, 1, 1, 1);
+        GameTooltip:AddLine(goldEscapeColor..textInserts.prefixWeek.."|r", 1, 1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixTitle, blueEscapeColor..ResolveTitle(data.twoVTwoWeeklyBest).."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixHighest, blueEscapeColor..data.twoVTwoWeeklyBest.."|r", 1, 1, 1, 1 ,1, 1);
         GameTooltip:AddDoubleLine(textInserts.prefixPlayed, blueEscapeColor..data.twoVTwoWeeklyPlayed.."|r", 1, 1, 1, 1 ,1, 1);
