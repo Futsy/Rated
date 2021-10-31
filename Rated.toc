@@ -1,8 +1,8 @@
 ## Interface: 90100
 ## Author - Futs 
 ## Title: Rated
-## Version: v1.2
-## Notes: Inspired by REflex, tracks arena games to the point where it gets questionable (Special thanks to Valk and Mook for helping me out with games to test this).
+## Version: v1.6.3
+## Notes: Inspired by REflex, tracks arena games to the point where it gets questionable.
 ## SavedVariablesPerCharacter: data, RatedIcon
 #@no-lib-strip@
 Libs\libs.xml
