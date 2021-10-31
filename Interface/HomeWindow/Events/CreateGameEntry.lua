@@ -96,12 +96,21 @@ function CreateTimestampAndWinnerArea(name, gameEntry, gameEntryWindow)
     local timestampText = Text(gameEntryWindow, texts.timestampLabel);
     timestampText:SetText(date("%H:%M:%S", gameEntry.timeStamp));
     local winnerTextWindow = Position(nil, gameEntryWindow, nil, 44, 40, "TOPRIGHT", 0, 0);
-    local winnerText = Text(winnerTextWindow, texts.winnerLabel);
+    local winnerWindow = Position(nil, winnerTextWindow, 1, 
+        winnerTextWindow:GetWidth(), 
+        winnerTextWindow:GetHeight(), 
+        nil, 0, 0
+    );
     if gameEntry.winner == gameEntry.playerSide then
-        winnerText:SetTextColor(0.2, 0.7, 0.2, 1);
-        winnerText:SetText(textInserts.winGameLabel);
+        winnerWindow:SetBackdrop({
+            bgFile = bd.WinIcon,
+            insets = { left = 10, right = 10, top = 10, bottom = 10 }
+        });
     else
-        winnerText:SetTextColor(0.7, 0.2, 0.2, 1);
+        winnerWindow:SetBackdrop({
+            bgFile = bd.LossIcon,
+            insets = { left = 10, right = 10, top = 10, bottom = 10 }
+        });
     end
 end
 
