@@ -346,7 +346,7 @@ koreanTexts = {
     skirmishHighestDetail = { fonts.fancyFontSmall, colors.white, "CENTER", 0, 0, "" },
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "시즌" },
-    seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    seasonName = { fonts.fancyFontRegular, colors.white, "CENTER", 0, 0, "" },
     playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsKorean = {
