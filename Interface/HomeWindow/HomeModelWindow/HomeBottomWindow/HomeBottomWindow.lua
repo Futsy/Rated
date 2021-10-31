@@ -9,11 +9,12 @@ function CreateHomeBottomWindow()
     local playerClass = Text(callbacks.bottomHeaderWindow, texts.playerClassSpec);
     playerClass:SetText(currentSpecName.." "..localizedClass);
 
+    if GetCurrentTitle() ~= -1 then
+        local titleText = Text(callbacks.bottomHeaderWindow, texts.playerTitle);
+        titleText:SetText(ResolveTitle(HighestSeasonRank()));
+    end
+
     -- Start with title of the season Large
     local classText = Text(callbacks.bottomHeaderWindow, texts.playerName);
-    if GetCurrentTitle() ~= -1 then
-        classText:SetText(ResolveTitle(HighestSeasonRank()).." "..UnitName("player"));
-    else
-        classText:SetText(UnitName("player"));
-    end
+    classText:SetText(UnitName("player"));
 end
