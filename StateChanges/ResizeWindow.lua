@@ -59,6 +59,9 @@ function ResizeWindow()
     callbacks.threesHeaderWindow:SetWidth(callbacks.homeModelWindow:GetWidth());
     callbacks.threesHeaderWindow:SetHeight(callbacks.homeModelWindow:GetHeight() * 0.07);
 
+    callbacks.skirmishHeaderWindow:SetWidth(callbacks.homeModelWindow:GetWidth());
+    callbacks.skirmishHeaderWindow:SetHeight(callbacks.homeModelWindow:GetHeight() * 0.07);
+
     -- GameScrollerWindow
     callbacks.gameScrollerWindow:SetWidth(callbacks.homeWindow:GetWidth() * 0.8);
     callbacks.gameScrollerWindow:SetHeight(callbacks.homeWindow:GetHeight());
