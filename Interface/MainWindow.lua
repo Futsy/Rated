@@ -134,7 +134,7 @@ function CreateMainWindow()
     if randomBackground == 0 then
         bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance or bd.BgHorde;
     elseif randomBackground == 1 then
-        bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance2 or bd.BgHorde2;
+        bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance2 or bd.BgHorde3;
     elseif randomBackground == 2 then
         bgString = UnitFactionGroup("player") == "Alliance" and bd.BgAlliance3 or bd.BgHorde3;
     end

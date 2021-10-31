@@ -8,7 +8,6 @@ bd = {
     ClassicLogo = "Interface\\GLUES\\COMMON\\GLUES-WOW-CLASSICLOGO",
     PrestigeIcon = "Interface\\PVPFrame\\Icons\\prestige-icon-4-2",
     BgHorde = "Interface\\PVPFrame\\ScoreboardBackgroundWarfrontsHorde",
-    BgHorde2 = "Interface\\PVPFrame\\ScoreboardBackgroundIslandsHorde",
     BgHorde3 = "Interface\\PVPFrame\\ScoreboardBackgroundDarkshoreWarfrontsHorde",
     BgAlliance = "Interface\\PVPFRAME\\ScoreboardBackgroundWarfrontsAlliance",
     BgAlliance2 = "Interface\\PVPFRAME\\ScoreboardBackgroundIslandsAlliance",
