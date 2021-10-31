@@ -119,6 +119,7 @@ texts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Season" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInserts = {
     -- Season names
@@ -232,6 +233,7 @@ germanTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Saison" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsGerman = {
     -- Season names
@@ -345,6 +347,7 @@ koreanTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "시즌" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsKorean = {
     -- Season names
@@ -458,6 +461,7 @@ chineseChinaTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "季节" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsChineseChina = {
     -- Season names
@@ -571,6 +575,7 @@ chineseTaiwanTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "季节" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsChineseTaiwan = {
     -- Season names
@@ -798,6 +803,7 @@ spanishTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Estación" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsSpanish = {
     -- Season names
@@ -911,6 +917,7 @@ portugueseTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Estación" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsPortuguese = {
     -- Season names
@@ -1024,6 +1031,7 @@ frenchTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Saison" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsFrench = {
     -- Season names
@@ -1137,6 +1145,7 @@ italianTexts = {
     addonHeader = { fonts.addonSpecial, colors.addonHeader, "CENTER", 0, 0, "Rated" },
     seasonLabel = { fonts.gameFontRegularShadow, colors.light, "CENTER", 0, 23, "Stagione" },
     seasonName = { fonts.fancyFontBig, colors.white, "CENTER", 0, 0, "" },
+    playerTitle = { fonts.gameFontRegularShadow, colors.grey, "CENTER", 0, 32, "" }
 };
 textInsertsItalian = {
     -- Season names
