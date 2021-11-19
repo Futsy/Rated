@@ -5,6 +5,8 @@ function GetCurrentSeasonTitle()
         return textInserts.seasonThirty;
     elseif currentSeason == 31 then
         return textInserts.seasonThirtyOne;
+    elseif currentSeason == 32 then
+        return textInserts.seasonThirtyTwo;
     end
     return textInserts.seasonUpgrade;
 end

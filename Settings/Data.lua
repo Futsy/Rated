@@ -125,6 +125,7 @@ textInserts = {
     seasonUpgrade = "Off-season",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -239,6 +240,7 @@ textInsertsGerman = {
     seasonUpgrade = "Off-season",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -353,6 +355,7 @@ textInsertsKorean = {
     seasonUpgrade = "비수기",
     seasonThirty = "죄 많은",
     seasonThirtyOne = "체인되지 않음",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -467,6 +470,7 @@ textInsertsChineseChina = {
     seasonUpgrade = "淡季",
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -581,6 +585,7 @@ textInsertsChineseTaiwan = {
     seasonUpgrade = "淡季",
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -695,6 +700,7 @@ textInsertsRussian = {
     seasonUpgrade = "Межсезонье",
     seasonThirty = "Греховный",
     seasonThirtyOne = "Освобожденный",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -809,6 +815,7 @@ textInsertsSpanish = {
     seasonUpgrade = "Fuera de temporada",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -923,6 +930,7 @@ textInsertsPortuguese = {
     seasonUpgrade = "Entressafra",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -1037,6 +1045,7 @@ textInsertsFrench = {
     seasonUpgrade = "Hors saison",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
@@ -1151,6 +1160,7 @@ textInsertsItalian = {
     seasonUpgrade = "Fuori stagione",
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
+    seasonThirtyTwo = "Cosmic",
 
     -- Titles for PVP rating
     titles = {
