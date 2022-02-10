@@ -10,6 +10,20 @@ ratedInfoGatheredAtleastOnce = false;
 skirmishInfoGatheredAtleastOnce = false;
 startTime = nil;
 
+-- Slash command related
+SLASH_RATED1 = "/rated";
+
+function SlashCommandsMapping(msg, editbox)
+    if msg == "export" then
+        ExportData();
+    else
+        if ratedInfoGatheredAtleastOnce and skirmishInfoGatheredAtleastOnce then
+            DisplayAddonFrame();
+        end
+    end
+end
+SlashCmdList["RATED"] = SlashCommandsMapping;
+
 function events:ADDON_LOADED()
     RequestRatedInfo();
     AddonLoaded(self);

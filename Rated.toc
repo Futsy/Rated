@@ -29,6 +29,7 @@ StateChanges\OpenHome.lua
 StateChanges\ResizeWindow.lua
 
 Utility\Animations.lua
+Utility\Export.lua
 Utility\FrameUtil.lua
 Utility\MapTexture.lua
 Utility\Rank.lua
