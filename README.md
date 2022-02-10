@@ -9,6 +9,8 @@ Destrocore
 
 ## Changelog
 
+v1.7 - Added Slash command and export option
+
 v1.6 - Added Skirmish rating and fix for RU local
 
 v1.5 - Added random backgrounds
