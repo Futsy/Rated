@@ -126,6 +126,7 @@ textInserts = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -241,6 +242,7 @@ textInsertsGerman = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -356,6 +358,7 @@ textInsertsKorean = {
     seasonThirty = "죄 많은",
     seasonThirtyOne = "체인되지 않음",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -471,6 +474,7 @@ textInsertsChineseChina = {
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -586,6 +590,7 @@ textInsertsChineseTaiwan = {
     seasonThirty = "有罪的",
     seasonThirtyOne = "解开的",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -701,6 +706,7 @@ textInsertsRussian = {
     seasonThirty = "Греховный",
     seasonThirtyOne = "Освобожденный",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -816,6 +822,7 @@ textInsertsSpanish = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -931,6 +938,7 @@ textInsertsPortuguese = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -1046,6 +1054,7 @@ textInsertsFrench = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
@@ -1161,6 +1170,7 @@ textInsertsItalian = {
     seasonThirty = "Sinful",
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
+    seasonThirtyThree = "Eternal",
 
     -- Titles for PVP rating
     titles = {
