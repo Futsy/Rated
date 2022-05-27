@@ -211,6 +211,11 @@ function PVPMatchCompleted()
             end
         end
 
+        if #gameEntry.playerTeam == 0 or #gameEntry.enemyTeam == 0 then
+            DEFAULT_CHAT_FRAME:AddMessage(textInserts.errorCorruptionGame);
+            return;
+        end
+
         tinsert(data, gameEntry);
         -- If the UI hasn't booted yet it doesnt matter it will add through data
         if callbacks.mainWindow ~= nil then
