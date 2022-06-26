@@ -43,15 +43,20 @@ function AddAllGames()
 
     -- Keep an offset so we know where to start the next header/entry
     local offset = 0;
-
+    local limiter = 0;
+    local maxLimiter = 500;
+    
     -- For each day
-    for i,currentDay in ipairs(datesWePlayed) do
-        CreateDayHeader(i, offset, currentDay);
-        offset = offset + 70;
+    for i, currentDay in ipairs(datesWePlayed) do
+        if limiter < maxLimiter then 
+            CreateDayHeader(i, offset, currentDay);
+            offset = offset + 70;
+        end
 
         for j, gameEntry in ipairs(data) do
-            if date("%d-%m-%Y", gameEntry.timeStamp) == currentDay then
+            if date("%d-%m-%Y", gameEntry.timeStamp) == currentDay and limiter < maxLimiter then
                 CreateGameEntry("GameEntryWindow"..i, gameEntry, offset);
+                limiter = limiter + 1;
                 offset = offset + 40;
             end
         end
