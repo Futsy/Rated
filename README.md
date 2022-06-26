@@ -9,6 +9,8 @@ Destrocore
 
 ## Changelog
 
+v1.8 - Set limiter for games on display
+
 v1.7 - Added Slash command and export option
 
 v1.6 - Added Skirmish rating and fix for RU local
