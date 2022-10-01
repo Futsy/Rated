@@ -9,6 +9,8 @@ function GetCurrentSeasonTitle()
         return textInserts.seasonThirtyTwo;
     elseif currentSeason == 33 then
         return textInserts.seasonThirtyThree;
+    elseif currentSeason == 34 then
+        return textInserts.seasonThirtyFour;
     end
     return textInserts.seasonUpgrade;
 end
@@ -16,7 +18,7 @@ end
 function GetCurrentXpacTitle()
     local xpacLevel = GetServerExpansionLevel();
     if xpacLevel ~= 8 then
-        return "???";
+        return textInserts.expansions.df;
     end
     return textInserts.expansions.sl;
 end

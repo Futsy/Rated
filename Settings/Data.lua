@@ -127,6 +127,7 @@ textInserts = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -147,6 +148,7 @@ textInserts = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -243,6 +245,7 @@ textInsertsGerman = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -263,6 +266,7 @@ textInsertsGerman = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -359,6 +363,7 @@ textInsertsKorean = {
     seasonThirtyOne = "체인되지 않음",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -379,6 +384,7 @@ textInsertsKorean = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -475,6 +481,7 @@ textInsertsChineseChina = {
     seasonThirtyOne = "解开的",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -495,6 +502,7 @@ textInsertsChineseChina = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -591,6 +599,7 @@ textInsertsChineseTaiwan = {
     seasonThirtyOne = "解开的",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -611,6 +620,7 @@ textInsertsChineseTaiwan = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -707,6 +717,7 @@ textInsertsRussian = {
     seasonThirtyOne = "Освобожденный",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -727,6 +738,7 @@ textInsertsRussian = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -823,6 +835,7 @@ textInsertsSpanish = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -843,6 +856,7 @@ textInsertsSpanish = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -939,6 +953,7 @@ textInsertsPortuguese = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -959,6 +974,7 @@ textInsertsPortuguese = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -1055,6 +1071,7 @@ textInsertsFrench = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -1075,6 +1092,7 @@ textInsertsFrench = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
@@ -1171,6 +1189,7 @@ textInsertsItalian = {
     seasonThirtyOne = "Unchained",
     seasonThirtyTwo = "Cosmic",
     seasonThirtyThree = "Eternal",
+    seasonThirtyFour = "Crimson",
 
     -- Titles for PVP rating
     titles = {
@@ -1191,6 +1210,7 @@ textInsertsItalian = {
         legion = "Legion",
         bfa = "Battle for azeroth",
         sl = "Shadowlands",
+        df = "Dragonflight",
         unknown = "Unknown"
     },
 
